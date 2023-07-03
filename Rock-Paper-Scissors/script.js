@@ -22,3 +22,18 @@ else if (computer === 3) {
 }
 }
 convertComputer();
+
+function firstTurn(){
+    let userTurn = prompt("Rock? Paper? Scissors?");
+    let input = userTurn.trim().toLowerCase();
+    if (input === "rock" && computer === "scissors") {
+    console.log("You win! Rock beats Scissors")
+    if (input === "rock" && computer === "paper") {
+    console.log("You loose! Paper beats rock")
+    if (input === "rock" && computer === 3) {
+    console.log("You win! Rock beats Scissors")
+    }
+    }
+    }
+    }
+    firstTurn();
