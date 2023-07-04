@@ -1,39 +1,32 @@
-const one = "rock"
-const two = "paper"
-const three = "scissors"
-
+const Rock = "rock";
+const Paper = "paper";
+const Scissors = "scissors";
 // generates random # form 1-3
-const computer = () => {
+let computer = function computerTurn() {
     let turn = (Math.floor(Math.random() * 3 ) + 1);
-    return turn;
-}
-function convertComputer(computer){
-if (computer === 1) {
-    computer = one;
-    console.log("one")
-}
-else if (computer === 2) {
-    computer = two;
-    console.log("two")
-}
-else if (computer === 3) {
-    computer = three;
-    console.log("three")
-}
-}
-convertComputer();
+    if (turn === 1 ) {
+        turn = Rock;
+    }
+    else if (turn === 2){
+        turn = Paper
+    }
+    else {
+        turn = Scissors;
+    }
+return turn}
+console.log(computer())
+// create function to convert computer choice to valid value
 
-function firstTurn(){
-    let userTurn = prompt("Rock? Paper? Scissors?");
-    let input = userTurn.trim().toLowerCase();
-    if (input === "rock" && computer === "scissors") {
-    console.log("You win! Rock beats Scissors")
-    if (input === "rock" && computer === "paper") {
-    console.log("You loose! Paper beats rock")
-    if (input === "rock" && computer === 3) {
+function firstTurn(playerGo, computerGo){
+    computerGo =computer;
+    playerGo = prompt("Rock? Paper? Scissors?");
+    let input = playerGo.trim().toLowerCase();
+    if (input.value === "rock" && computerGo.value === "scissors" ) {
     console.log("You win! Rock beats Scissors")
     }
-    }
-    }
+    else if (input === "rock" && computer === "paper") {
+        console.log("You loose! Paper beats rock")
+        }
     }
     firstTurn();
+ 
