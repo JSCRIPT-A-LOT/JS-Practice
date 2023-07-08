@@ -16,7 +16,6 @@ return turn}
 //  1 round prompts user for input and runs against getComputerChoice function
 function firstTurn(){
     let computerGo = getComputerChoice();
-    console.log(computerGo);
     let playerGo = prompt("Rock? Paper? Scissors?").trim().toLowerCase();
     let input = playerGo;
     let choice = input;
