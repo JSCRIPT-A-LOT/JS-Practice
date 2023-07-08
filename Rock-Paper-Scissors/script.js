@@ -46,6 +46,8 @@ function firstTurn(){
     else if (choice === "scissors" && computerGo === "rock") {
         console.log("You lose! Rock beats Scissors");
         }
-        else (console.log("Please enter a valid choice!"))
-    }
+        else if (choice !== "rock" || "scissors" || "paper")
+            console.log("enter valid input");
+            }
+    
     firstTurn();
