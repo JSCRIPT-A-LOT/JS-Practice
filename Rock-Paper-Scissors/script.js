@@ -17,37 +17,39 @@ return turn}
 function firstTurn(){
     let computerGo = getComputerChoice();
     let playerGo = prompt("Rock? Paper? Scissors?").trim().toLowerCase();
-    let input = playerGo;
-    let choice = input;
+    let choice = playerGo;
     if (choice === "rock" && computerGo === "scissors") {
-    console.log("You win! Rock beats Scissors");
+        return "You win! Rock beats Scissors";
     }
     else if (choice === "rock" && computerGo === "paper") {
-        console.log("You lose! Paper beats rock");
+        return "You lose! Paper beats rock";
         }
     else if (choice === "rock" && computerGo === "rock") {
-        console.log("A tie!");
+        return "A tie!";
         }
     else if (choice === "paper" && computerGo === "paper") {
-        console.log("A tie!");
+        return "A tie!";
         }
     else if (choice === "paper" && computerGo === "rock") {
-        console.log("You Win! Paper beats rock");
+        return "You Win! Paper beats rock";
         }
     else if (choice === "paper" && computerGo === "scissors") {
-        console.log("You lose! Scissors beats paper");
+        return "You lose! Scissors beats paper";
         }
     else if (choice === "scissors" && computerGo === "scissors") {
-        console.log("A tie");
+        return "A tie";
         }
     else if (choice === "scissors" && computerGo === "paper") {
-        console.log("You Win! Scissors beats paper");
+        return "You Win! Scissors beats paper";
         }
     else if (choice === "scissors" && computerGo === "rock") {
-        console.log("You lose! Rock beats Scissors");
+        return "You lose! Rock beats Scissors";
         }
         else if (choice !== "rock" || "scissors" || "paper")
-            console.log("enter valid input");
+        return "enter valid input";
             }
     
     firstTurn();
+    function game(){
+
+    }
