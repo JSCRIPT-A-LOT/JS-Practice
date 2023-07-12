@@ -1,5 +1,6 @@
-// generates random # form 1-3 and assisgns rock, paper, or sccisors string
-const getComputerChoice = ()=>{
+let score = 0;
+// generates random # form 1-3 and assisgns rock, paper, or sccisors.
+const getComputerplayerSelection = ()=>{
     let turn = (Math.floor(Math.random() * 3 ) + 1);
  switch (turn) {
     case 1:
@@ -13,43 +14,55 @@ const getComputerChoice = ()=>{
         break;
  }
 return turn}
-//  1 round prompts user for input and runs against getComputerChoice function
-function firstTurn(){
-    let computerGo = getComputerChoice();
-    let playerGo = prompt("Rock? Paper? Scissors?").trim().toLowerCase();
-    let choice = playerGo;
-    if (choice === "rock" && computerGo === "scissors") {
+//  1 round prompts user for input and runs against getComputerplayerSelection while adding to score of user wins.
+const oneRound = function firstTurn(playerSelection, computerSelection){
+    computerSelection = getComputerplayerSelection();
+    playerSelection = prompt("Rock? Paper? Scissors?").trim().toLowerCase();
+    if (playerSelection === "rock" && computerSelection  === "scissors") {
+        score++;
         return "You win! Rock beats Scissors";
     }
-    else if (choice === "rock" && computerGo === "paper") {
-        return "You lose! Paper beats rock";
+    else if (playerSelection === "rock" && computerSelection  === "paper") {
+        return "You Lose! Paper beats rock";
         }
-    else if (choice === "rock" && computerGo === "rock") {
-        return "A tie!";
-        }
-    else if (choice === "paper" && computerGo === "paper") {
-        return "A tie!";
-        }
-    else if (choice === "paper" && computerGo === "rock") {
+    else if (playerSelection === "paper" && computerSelection  === "rock") {
+        score++;
         return "You Win! Paper beats rock";
         }
-    else if (choice === "paper" && computerGo === "scissors") {
-        return "You lose! Scissors beats paper";
+    else if (playerSelection === "paper" && computerSelection  === "scissors") {
+        return "You Lose! Scissors beats paper";
         }
-    else if (choice === "scissors" && computerGo === "scissors") {
-        return "A tie";
-        }
-    else if (choice === "scissors" && computerGo === "paper") {
+    else if (playerSelection === "scissors" && computerSelection  === "paper") {
+        score++;
         return "You Win! Scissors beats paper";
         }
-    else if (choice === "scissors" && computerGo === "rock") {
-        return "You lose! Rock beats Scissors";
+    else if (playerSelection === "scissors" && computerSelection  === "rock") {
+        return "You Lose! Rock beats Scissors";
         }
-        else if (choice !== "rock" || "scissors" || "paper")
+        else if (playerSelection === computerSelection) {
+            result = "A tie!";
+          }
+        else if (playerSelection !== "rock" || "scissors" || "paper")
         return "enter valid input";
             }
-    
-    firstTurn();
+    // plays 5 rounds records score after each round with winner stated at the end.
     function game(){
-
-    }
+       oneRound();
+       console.log(score);
+       oneRound();
+       console.log(score);
+       oneRound();
+       console.log(score);
+       oneRound();
+       console.log(score);
+       oneRound();
+       console.log(score);
+       if (score >= 3) {
+        console.log(`You Win!, your score was ${score}/5`);
+       }
+        else {
+        console.log(`You Loose!, your score was ${score}/5`); 
+        }
+       
+        }
+       game();
